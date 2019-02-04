@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Keys Pressed</title>
+	<link rel="stylesheet" type="text/css" href="bulma.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<section class="section">
+		<div class="text-area container">
+    		<textarea class="textarea" placeholder="4 lines of textarea" rows="4"></textarea>
+			<button class="button is-success">Reload</button>
+    	</div>
+   	</section>
+	<section class="section">
+    	<div class="container">
+			<div class="keys columns">
+				<div data-key="81" class="key">
+					<kbd>q</kbd>	
+				</div>
+				<div data-key="87" class="key">
+					<kbd>w</kbd>	
+				</div>
+				<div data-key="69" class="key">
+					<kbd>e</kbd>	
+				</div>
+				<div data-key="82" class="key">
+					<kbd>r</kbd>	
+				</div>
+				<div data-key="84" class="key">
+					<kbd>t</kbd>	
+				</div>
+				<div data-key="89" class="key">
+					<kbd>y</kbd>	
+				</div>
+				<div data-key="85" class="key">
+					<kbd>u</kbd>	
+				</div>
+				<div data-key="73" class="key">
+					<kbd>i</kbd>	
+				</div>
+				<div data-key="79" class="key">
+					<kbd>o</kbd>	
+				</div>
+				<div data-key="80" class="key">
+					<kbd>p</kbd>	
+				</div>
+				<div data-key="8" class="key">
+					<kbd>Backspace</kbd>	
+				</div>
+			</div>
+			<div class="keys columns">
+				<div data-key="65" class="key">
+					<kbd>a</kbd>	
+				</div>
+				<div data-key="83" class="key">
+					<kbd>s</kbd>	
+				</div>
+				<div data-key="68" class="key">
+					<kbd>d</kbd>	
+				</div>
+				<div data-key="70" class="key">
+					<kbd>f</kbd>	
+				</div>
+				<div data-key="71" class="key">
+					<kbd>g</kbd>	
+				</div>
+				<div data-key="72" class="key">
+					<kbd>h</kbd>	
+				</div>
+				<div data-key="74" class="key">
+					<kbd>j</kbd>	
+				</div>
+				<div data-key="75" class="key">
+					<kbd>k</kbd>	
+				</div>
+				<div data-key="76" class="key">
+					<kbd>l</kbd>	
+				</div>
+				<div data-key="59" class="key">
+					<kbd>;</kbd>	
+				</div>
+				<div data-key="13" class="key">
+					<kbd>Enter</kbd>	
+				</div>
+			</div>
+			<div class="keys columns">
+				<div data-key="16" class="key">
+					<kbd>Shift</kbd>	
+				</div>
+				<div data-key="90" class="key">
+					<kbd>z</kbd>	
+				</div>
+				<div data-key="88" class="key">
+					<kbd>x</kbd>	
+				</div>
+				<div data-key="67" class="key">
+					<kbd>c</kbd>	
+				</div>
+				<div data-key="86" class="key">
+					<kbd>v</kbd>	
+				</div>
+				<div data-key="66" class="key">
+					<kbd>b</kbd>	
+				</div>
+				<div data-key="78" class="key">
+					<kbd>n</kbd>	
+				</div>
+				<div data-key="77" class="key">
+					<kbd>m</kbd>	
+				</div>
+				<div data-key="188" class="key">
+					<kbd>,</kbd>	
+				</div>
+				<div data-key="190" class="key">
+					<kbd>.</kbd>	
+				</div>
+				<div data-key="191" class="key">
+					<kbd>/</kbd>	
+				</div>
+				<div data-key="16" class="key">
+					<kbd>Shift</kbd>	
+				</div>
+			</div>
+			<div class="keys columns">
+				<div data-key="32" class="key">
+					<kbd>Spacebar</kbd>	
+				</div>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+		function removeTransition(e){
+			if(e.propertyName!=='transform')return;
+			// console.log(e);
+			// console.log(this);
+      		this.classList.remove('playing');
+		}
+		function keyPressed(e){
+			const key =document.querySelector(`.key[data-key="${e.keyCode}"]`);
+			if (!key) return;
+			// console.log(key);
+			key.classList.add('playing');
+		}
+		window.addEventListener('keydown',keyPressed);
+		const keys=document.querySelectorAll('.key');
+		keys.forEach(key=> key.addEventListener('transitionend',removeTransition));
+	</script>
+</body>
+</html>
