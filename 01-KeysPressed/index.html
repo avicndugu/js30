@@ -8,8 +8,10 @@
 <body>
 	<section class="section">
 		<div class="text-area container">
-    		<textarea class="textarea" placeholder="4 lines of textarea" rows="4"></textarea>
-			<button class="button is-success">Reload</button>
+			<p id="text-view"></p>
+			<p id="text-view2"></p>
+    		<!-- <textarea class="textarea" placeholder="4 lines of textarea" rows="4"></textarea>
+			<button class="button is-success">Reload</button> -->
     	</div>
    	</section>
 	<section class="section">
@@ -146,5 +148,6 @@
 		const keys=document.querySelectorAll('.key');
 		keys.forEach(key=> key.addEventListener('transitionend',removeTransition));
 	</script>
+	<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
