@@ -8,10 +8,10 @@ let toTypeText=[];
 let t;
 // let	currentChar;
 console.log(generatedText);
-let textView=document.querySelector('#text-view');
+// let textView=document.querySelector('#text-view');
 let textView2=document.querySelector('#text-view2');
 let textView3=document.querySelector('#text-view3');
-textView.innerText=generatedText;
+// textView.innerText=generatedText;
 // Obtain the character to be typed by the user. It can be highlighted in green.
 // console.log(generatedText.charAt(0));
 allToType=generatedText.slice(n);
